@@ -1,0 +1,59 @@
+#include <iostream>
+
+int Kysy()
+{
+	int valinta = -1;
+	std::cout	<< "0 - Lopetus\n" << "1 - Summa\n" << "2 - Erotus\n"
+				<< "3 - Tulo\n" << "4 - Osmaara\n" << "5 - Jakojaannos\n";
+
+	std::cin >> valinta;
+	return valinta;
+}
+
+double Summa(float luku1, int luku2)
+{
+	double tulos = luku1 + luku2;	return tulos;
+}
+double Erotus(float luku1, int luku2)
+{
+	double tulos = luku1 - luku2;	return tulos;
+}
+double Tulo(float luku1, int luku2)
+{
+	double tulos = luku1 * luku2;	return tulos;
+}
+double Osamaara(float luku1, int luku2)
+{
+	double tulos = luku1 / luku2;	return tulos;
+}
+double Jakojaannos(float luku1, int luku2)
+{
+	double tulos = (int)luku1 % luku2;	return tulos;
+}
+
+int main()
+{
+	int valinta = -1, luku2 = 0;
+	float luku1 = 0;
+	double tulos = 0;
+
+	do{
+		std::cout << "Anna Luku_1 ja Luku_2" << std::endl;
+		std::cin >> luku1 >> luku2;
+
+		valinta = Kysy();
+
+		switch (valinta)
+		{
+		case (0) : break;
+		case (1) : tulos = Summa(luku1, luku2); break;
+		case (2) : tulos = Erotus(luku1, luku2); break;
+		case (3) : tulos = Tulo(luku1, luku2); break;
+		case (4) : tulos = Osamaara(luku1, luku2); break;
+		case (5) : tulos = Jakojaannos(luku1, luku2); break;
+		default: break;
+		}
+		std::cout << tulos << std::endl;
+	} while (valinta != 0);
+
+}
